@@ -6,9 +6,18 @@
 #pragma once		
 
 
+#include <cstdlib>
 #include <iostream>
-using namespace std;
+#include <stdexcept>
 
+#include <boost/program_options.hpp>
+#include <boost/format.hpp>
+#include <boost/foreach.hpp>
+#include <boost/filesystem.hpp>
+
+using namespace std;
+namespace options = boost::program_options;
+namespace fs = boost::filesystem;
 
 // ============================================================================
 //  EOF

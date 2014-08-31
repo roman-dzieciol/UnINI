@@ -5,10 +5,6 @@
 // ============================================================================
 #pragma once		
 
-
-#include <cstring>
-
-
 #include <iostream>
 #include <fstream>
 #include <list>
@@ -18,10 +14,17 @@
 #include <functional>
 #include <iterator>
 
+#include <boost/format.hpp>
+#include <boost/foreach.hpp>
+#include <boost/algorithm/string.hpp>
+#include <boost/filesystem.hpp>
+#include <boost/utility.hpp>
+#include <boost/array.hpp>
 
 using namespace std;
 using namespace stdext;
 
+namespace fs = boost::filesystem;
 
 // ============================================================================
 //  EOF

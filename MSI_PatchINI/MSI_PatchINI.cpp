@@ -31,13 +31,13 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 
 
 #define MB_RETURN_ERROR(text){ \
-	::MessageBox(NULL, text, TEXT("Error"), MB_OK); \
+	::MessageBox(nullptr, text, TEXT("Error"), MB_OK); \
 	return ERROR_INSTALL_FAILURE; }
 
 
 wstring MsiGetPropertyStl( MSIHANDLE hInstall, LPCWSTR szName )
 {
-	TCHAR* szValueBuf = NULL;
+	TCHAR* szValueBuf = nullptr;
 	DWORD cchValueBuf = 0;
 	UINT uiStat =  MsiGetProperty(hInstall, szName, TEXT(""), &cchValueBuf);
 	if (ERROR_MORE_DATA == uiStat)
@@ -52,7 +52,7 @@ wstring MsiGetPropertyStl( MSIHANDLE hInstall, LPCWSTR szName )
 
 	if (ERROR_SUCCESS != uiStat)
 	{
-		if (szValueBuf != NULL) 
+		if (szValueBuf != nullptr) 
 			delete [] szValueBuf;
 		return wstring(TEXT(""));
 	}
@@ -73,7 +73,7 @@ BOOL PatchINI_Existing( wstring mergePath, wstring targetPath, int flags=1 )
 		return TRUE;
 
 	// Patch target INI
-	int result = PatchINIMergeW(mergePath.c_str(), targetPath.c_str(), targetPath.c_str(), flags, NULL, 0);
+	int result = PatchINIMergeW(mergePath.c_str(), targetPath.c_str(), targetPath.c_str(), flags, nullptr, 0);
 	return result == 0 ? TRUE : FALSE;
 }
 

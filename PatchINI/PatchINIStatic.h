@@ -13,19 +13,22 @@
 extern "C" {
 #endif
 
+extern const char *PatchINIDefaultOnlyString();
+const wchar_t *PatchINIDefaultOnlyStringW();
+
 extern int PatchINIMerge( const char* mergeini
 						 , const char* baseini
 						 , const char* resultini
 						 , int flags
-						 , char* errorbuffer
-						 , int errorbufferlen );
+						 , char* errorBuffer
+						 , int errorBufferCharLen );
 
 extern int PatchINIMergeW( const wchar_t* mergeini
 						 , const wchar_t* baseini
 						 , const wchar_t* resultini
 						 , int flags
-						 , wchar_t* errorbuffer
-						 , int errorbufferlen );
+						 , wchar_t* errorBuffer
+						 , int errorBufferCharLen );
 
 #ifdef __cplusplus
 }
